@@ -1,0 +1,35 @@
+
+  <!-- Main Page Content and Sidebar -->
+  <div class="row">
+    <!-- Main Blog Content -->
+    <div class="large-12 columns" role="content">
+      <view-title>Blog | Joop Laan</view-title>
+      <h1>Blog</h1>
+      <article ng-repeat="node in nodes">
+
+        <h3><a href="#!/blog/{{node.node.nid}}">{{node.node.title}}</a></h3>
+        <h6>{{node.node.date | date}}</h6>
+
+        <div class="row">
+          <div class="large-4 columns">
+            <a href="#!/blog/{{node.node.nid}}">
+              <img ng-bind="node.node.featured_image.src" src="{{node.node.featured_image.src}}" alt="{{node.node.featured_image.alt}}" />
+            </a>
+          </div>
+          <div class="large-8 columns">
+            <div ng-bind-html="node.node.body">{{node.node.body}}</div>
+            <a href="#!/blog/{{node.node.nid}}">Read more</a>
+          </div>
+        </div>
+        <hr />
+      </article>
+      <button class="btn btn-info" ng-show="has_more()" ng-click="show_more()"><i class="icon-plus icon-white"></i> Show More</button> <div id="loading"><span>Loading...</span></div>
+
+    </div>
+    <!-- End Main Content -->
+
+  </div>
+  <!-- End Main Content and Sidebar -->
+
+
+<!-- <pre>{{data | json}}</pre> -->

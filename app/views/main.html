@@ -1,0 +1,53 @@
+<view-title>Joop Laan - UX Developer, Interaction Designer, Web developer</view-title>
+  <div id="loading" class="row">
+    <div class="large-12 columns">
+      <h1>Loading...</h1>
+    </div>
+  </div>
+  <div id="hide-while-loading">
+      <div class="row full-width">
+        <img src="{{banner_src}}" alt="{{banner_alt}}">
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+            <p><small>Photo: <a href="{{banner_photo_credit_url}}" rel="external">{{banner_photo_credit_name}}</a></small></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+            <h1 ng-bind="greeting"></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h4>{{welcome_title}}</h4>
+          <div ng-bind-html="welcome_body"></div>
+          <p><a href="#!/contact">Contact</a></p>
+        </div>
+        <div class="large-4 columns">
+          <h4>Ongoing projects</h4>
+          <ul>
+            <li ng-repeat="project in currentProjects">
+              <a href="#!/project/{{project.nid}}">{{project.title}}</a>
+            </li>
+          </ul>
+          <p><a href="#!/project">All projects</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <div class="large-4 columns">
+          <a href="#!/blog/{{blogpost_nid}}">
+            <img src="{{blogpost_img_src}}" alt="{{blogpost_img_alt}}">
+          </a>
+        </div>
+        <div class="large-8 columns">
+          <h4><a href="#!/blog/{{blogpost_nid}}">{{blogpost_title}}</a></h4>
+          <div ng-bind-html="blogpost_body"></div>
+          <p><a href="#!/blog/{{blogpost_nid}}">Read more</a></p>
+        </div>
+      </div>
+</div>
