@@ -13,9 +13,8 @@ See: [Headless Drupal feature](https://github.com/jooplaan/drupal-7-headless-fea
 Install the AngularJS local.
 
 ```
-$ mkdir d7client
-$ cd d7client
-$ git pull git@github.com:jooplaan/AngularJS-d7client.git
+$ git clone git@github.com:jooplaan/AngularJS-d7client.git
+$ cd AngularJS-d7client
 ```
 
 Edit the app/scripts/app.js. At the bottom of the file enter the Drupal URI.
