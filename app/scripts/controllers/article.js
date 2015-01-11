@@ -11,6 +11,8 @@ angular.module('D7clientApp')
   .controller('ArticleCtrl', ['$scope', '$routeParams', '$http', 'drupalUri', function ($scope, $routeParams, $http, drupalUri) {
 
     var nid = $routeParams.nid;
+    $scope.more = false;
+    $scope.mainColumn = 'large-12';
 
     $http.get(drupalUri + '/api/article/' + nid).then(function(response) {
       var data = response.data.nodes[0].node;
@@ -18,17 +20,19 @@ angular.module('D7clientApp')
       $scope.title = data.title;
       $scope.body = data.body;
       $scope.nodeID = data.nid;
-
-      // var regex = /<img.*?src="(.*?)"/;
-      // $scope.callOutLarge = regex.exec(data.field_call_out_image_medium_jpg)[1];
-      // $scope.callOutMedium = regex.exec(data.field_call_out_image_medium_jpg)[1];
-      // $scope.callOutSmall = regex.exec(data.field_call_out_image_medium_jpg)[1];
-      // $scope.callOutSquareLarge = regex.exec(data.field_call_out_image_square_larg)[1];
-      // $scope.callOutSquareMedium = regex.exec(data.field_call_out_image_square_medi)[1];
-      // $scope.callOutSquareSmall = regex.exec(data.field_call_out_image_square_smal)[1];
-
-      // console.log('ArticleCtrl GET $scope', $scope );
-      // console.log('ArticleCtrl GET data', data);
-
     });
+
+    $http.get(drupalUri + '/api/more-articles/' + nid).then(function(mresponse) {
+      $scope.mdata = mresponse.data.nodes;
+      if (mresponse.data.nodes.length > 0) {
+        $scope.more = true;
+        $scope.mainColumn = 'large-8';
+      }
+    });
+
+    $scope.has_more = function () {
+      return $scope.more;
+    };
+
+
   }]);

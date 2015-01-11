@@ -25,8 +25,31 @@
           <h4>{{welcome_title}}</h4>
           <div ng-bind-html="welcome_body"></div>
           <p><a href="#!/contact">Contact</a></p>
+
+          <div class="current-jam" ng-show="has_jam()">
+            <h4>My Jam</h4>
+            <div class="row">
+              <div class="large-3 columns">
+                <p><a href="{{myjam.url}}" rel="external" title="Listen!"><img src="{{myjam.jamvatarMedium}}" alt=""></a></p>
+              </div>
+              <div class="large-9 colums">
+                <h5><a href="{{myjam.url}}" rel="external" title="Listen!">{{myjam.combinedTruncated}}</a></h5>
+                <p>{{myjam.caption}}</p>
+              </div>
+            </div>
+          <div class="other-likes" ng-show="has_likes()">
+            <h4>Also liking:</h4>
+            <ul>
+              <li ng-repeat="like in likes">
+                <a href="{{like.url}}" rel="external">{{like.title}}</a> - {{like.artist}}
+              </li>
+            </ul>
+          </div>
+          </div>
         </div>
+
         <div class="large-4 columns">
+
           <h4>Ongoing projects</h4>
           <ul>
             <li ng-repeat="project in currentProjects">
@@ -34,6 +57,8 @@
             </li>
           </ul>
           <p><a href="#!/project">All projects</a></p>
+
+
         </div>
       </div>
 
