@@ -1,14 +1,14 @@
-
+<div class="page-inner projects">
   <!-- Main Page Content and Sidebar -->
   <div class="row">
     <!-- Main Blog Content -->
     <div class="large-12 columns" role="content">
       <view-title>Project portfolio | Joop Laan</view-title>
-      <h1>Project portfolio</h1>
+      <h1 class="page-title">Project portfolio</h1>
       <div id="hide-while-loading">
       <article ng-repeat="node in nodes">
 
-        <h3><a href="#!/project/{{node.node.nid}}">{{node.node.title}}</a></h3>
+        <h2><a href="#!/project/{{node.node.nid}}">{{node.node.title}}</a></h2>
         <h6>{{node.node.date | date}}</h6>
 
         <div class="row">
@@ -32,6 +32,5 @@
 
   </div>
   <!-- End Main Content and Sidebar -->
-
-
+</div>
 <!-- <pre>{{data | json}}</pre> -->

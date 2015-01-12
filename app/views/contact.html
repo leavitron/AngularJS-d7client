@@ -1,27 +1,49 @@
 
 <view-title>{{title}} | Joop Laan</view-title>
-
-<div class="row">
-  <div class="large-4 columns side-bar">
-    <div class="contact-img">
-      <img src="{{img_src}}" alt="{{img_alt}}">
-    </div>
-    <section class="section">
-      <span ng-bind-html="welcome_side_text"></span>
-    </section>
-  </div>
-
-  <div class="large-8 columns">
-    <h1>{{title}}</h1>
-    <div class="section-container tabs" data-section>
+<div class="page-inner contact">
+  <div class="row">
+    <div class="large-4 columns side-bar">
+      <div class="contact-img">
+        <img src="{{img_src}}" alt="{{img_alt}}">
+      </div>
       <section class="section">
-        <div class="content" data-slug="panel1">
-          <div ng-bind-html="body"></div>
-        </div>
+        <span ng-bind-html="welcome_side_text"></span>
       </section>
     </div>
+
+    <div class="large-8 columns">
+      <h1 class="page-title">{{title}}</h1>
+      <div class="section-container tabs" data-section>
+        <section class="section">
+          <div class="content" data-slug="panel1">
+            <div ng-bind-html="body"></div>
+          </div>
+        </section>
+      </div>
+      <div class="current-jam panel callout radius" ng-show="has_jam()">
+        <h2>My Jam</h2>
+        <div class="row">
+          <div class="large-3 columns">
+            <p><a href="{{myjam.url}}" rel="external" title="Listen!"><img src="{{myjam.jamvatarMedium}}" alt=""></a></p>
+          </div>
+          <div class="large-9 colums">
+            <h3><a href="{{myjam.url}}" rel="external" title="Listen!">{{myjam.combinedTruncated}}</a></h3>
+            <p>{{myjam.caption}}</p>
+          </div>
+        </div>
+      <div class="other-likes" ng-show="has_likes()">
+
+        <h3>Diggin'</h3>
+        <ul>
+          <li ng-repeat="like in likes">
+            <a href="{{like.url}}" rel="external">{{like.title}}</a> - {{like.artist}}
+          </li>
+        </ul>
+      </div>
+      </div>
+
+    </div>
+
   </div>
-
 </div>
-
 <!-- <pre>{{data | json}}</pre> -->

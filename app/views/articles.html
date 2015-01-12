@@ -1,13 +1,13 @@
-
+<div class="page-inner articles">
   <!-- Main Page Content and Sidebar -->
   <div class="row">
     <!-- Main Blog Content -->
     <div class="large-12 columns" role="content">
       <view-title>Blog | Joop Laan</view-title>
-      <h1>Blog</h1>
+      <h1 class="page-title">Blog</h1>
       <article ng-repeat="node in nodes">
 
-        <h3><a href="#!/blog/{{node.node.nid}}">{{node.node.title}}</a></h3>
+        <h2><a href="#!/blog/{{node.node.nid}}">{{node.node.title}}</a></h2>
         <h6>{{node.node.date | date}}</h6>
 
         <div class="row">
@@ -30,6 +30,5 @@
 
   </div>
   <!-- End Main Content and Sidebar -->
-
-
+</div>
 <!-- <pre>{{data | json}}</pre> -->

@@ -52,6 +52,7 @@ var app = angular
       .otherwise({
         redirectTo: '/'
       });
+    angular.element('a[rel=external]').attr('target', '_blank');
   }]);
 
 /** Ajax Spinner **/
@@ -96,3 +97,6 @@ app.factory('FeedService', ['$http', function($http) {
 
 // Define a constant for the Drupal installation location.
 app.constant('drupalUri', 'http://d7.jooplaan.com');
+
+
+

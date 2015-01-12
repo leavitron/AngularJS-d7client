@@ -1,18 +1,21 @@
 <view-title>{{title}} | Joop Laan</view-title>
-<div class="row">
-  <div class="{{mainColumn}} columns">
-    <article>
-      <h1>{{title}}</h1>
-      <div ng-bind-html="body"></div>
-    </article>
-  </div>
-  <div class="large-4 columns" ng-show="has_more()">
-  <h1>More</h1>
-    <ul class="side-nav" role="navigation" title="Link List">
-      <li role="menuitem" ng-repeat="node in mdata">
-        <a href="#!/blog/{{node.node.nid}}">{{node.node.title}}</a>
-      </li>
-    </ul>
+<div class="page-inner article">
+  <div class="row">
+    <div class="large-12 columns">
+      <article>
+        <h1 class="page-title">{{title}}</h1>
+        <div ng-bind-html="body"></div>
+      </article>
+
+      <span ng-show="has_more()">
+      <h2>More</h2>
+        <ul class="side-nav" role="navigation" title="Link List">
+          <li role="menuitem" ng-repeat="node in mdata">
+            <a href="#!/blog/{{node.node.nid}}">{{node.node.title}}</a>
+          </li>
+        </ul>
+      </span>
+    </div>
   </div>
 </div>
 <!-- <pre>{{data | json}}</pre> -->
