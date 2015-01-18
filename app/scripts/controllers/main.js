@@ -9,6 +9,7 @@
  */
 angular.module('D7clientApp')
   .controller('MainCtrl', ['$scope', 'articleService', 'drupalUri', function ($scope, nodes, drupalUri) {
+
     // Page title.
     $scope.viewTitle = 'Joop Laan - Web development';
     // Banner image, random image per time of day.

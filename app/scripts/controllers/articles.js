@@ -32,5 +32,4 @@ angular.module('D7clientApp')
     $scope.nodes = [];
     $scope.more = false;
     $scope.loadData();
-
   }]);
