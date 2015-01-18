@@ -79,22 +79,22 @@ angular.module('D7clientApp')
     $scope.loadPageWelcome();
 
     // Current project list. http://d7.jooplaan.com/api/project
-    $scope.loadCurrentProjects = function () {
-      var url = drupalUri + '/api/project';
-      nodes.getArticles(url).then(function (response) {
-        var projects = response.data.nodes;
-        for (var y = 0; y < projects.length; y++) {
-          var project = projects[y].node;
-          if(project.project_in_progress === '1') {
-            $scope.currentProjects = $scope.currentProjects.concat(project);
-          }
-        }
-      });
+    // $scope.loadCurrentProjects = function () {
+    //   var url = drupalUri + '/api/project';
+    //   nodes.getArticles(url).then(function (response) {
+    //     var projects = response.data.nodes;
+    //     for (var y = 0; y < projects.length; y++) {
+    //       var project = projects[y].node;
+    //       if(project.project_in_progress === '1') {
+    //         $scope.currentProjects = $scope.currentProjects.concat(project);
+    //       }
+    //     }
+    //   });
 
-    };
+    // };
 
-    $scope.currentProjects = [];
-    $scope.loadCurrentProjects();
+    // $scope.currentProjects = [];
+    // $scope.loadCurrentProjects();
 
     // http://d7.jooplaan.com/api/article-latest
     $scope.loadHomeBlogPost = function () {
