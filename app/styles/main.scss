@@ -147,3 +147,11 @@ figure {
   // max-width: 1440px;
 }
 
+.hidden-text {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
